@@ -2,7 +2,6 @@ const express = require('express');
 const morgan =  require('morgan');
 
 const blogPostRouter = require('./blogPostRouter');
-//const recipesRouter = require('./recipesRouter');
 
 const app = express();
 
@@ -10,7 +9,7 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 
 app.use('/blog-posts', blogPostRouter)
-//app.use('/recipes', recipesRouter);
+
 app.get('/:id', (req, res) => {
 	console.log("Hello", req.params.id);
 })
