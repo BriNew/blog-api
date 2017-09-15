@@ -6,11 +6,11 @@ const jsonParser = bodyParser.json();
 
 const {BlogPosts} = require('./models');
 
-BlogPosts.create('cows', 'You will never expect these 10 cow things', 'Cow Expert', '01/01/2017');
-BlogPosts.create('dogs', 'You will never expect these 10 dogs things', 'Dog Expert', '01/02/2017');
+// BlogPosts.create('cows', 'You will never expect these 10 cow things', 'Cow Expert', '01/01/2017');
+// BlogPosts.create('dogs', 'You will never expect these 10 dogs things', 'Dog Expert', '01/02/2017');
 
 router.get('/', (req, res) => {
-  res.json(BlogPosts.get());
+  res.json(BlogPosts.find());
 });
 
 router.post('/', jsonParser, (req, res) => {
